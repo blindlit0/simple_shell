@@ -3,6 +3,7 @@
 
 /**
  * execmd - function that runs exec command
+ * @argv: argument vector
 */
 
 void execmd(char **argv)

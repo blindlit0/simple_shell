@@ -8,7 +8,6 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-
 void execmd(char **argv); /*Executes command passed to terminal*/
 
 char *get_location(char *command);
