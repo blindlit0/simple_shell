@@ -14,13 +14,13 @@ int _historylist(info_t *info)
 }
 
 /**
- * string_alias - sets alias to string
+ * strin_alias - sets alias to string
  * @info: parameter struct
  * @str: alias string
  * Return: 0 on success, 1 on failure
  */
 
-int string_alias(info_t *info, char *str)
+int strin_alias(info_t *info, char *str)
 {
 	char *p, c;
 	int ret;
@@ -51,9 +51,9 @@ int set_alias(info_t *info, char *str)
 	if (!p)
 		return (1);
 	if (!*++p)
-		return (unset_alias(info, str));
+		return (strin_alias(info, str));
 
-	unset_alias(info, str);
+	strin_alias(info, str);
 	return (add_node_end(&(info->alias), str, 0) == NULL);
 }
 
@@ -97,7 +97,7 @@ int _mimalias(info_t *info)
 		node = info->alias;
 		while (node)
 		{
-			print_alias(node);
+			alias(node);
 			node = node->next;
 		}
 		return (0);
@@ -106,9 +106,9 @@ int _mimalias(info_t *info)
 	{
 		p = _strchr(info->argv[i], '=');
 		if (p)
-			set_alias(info, info->argv[i]);
+			string_alias(info, info->argv[i]);
 		else
-			print_alias(node_starts_with(info->alias, info->argv[i], '='));
+			alias(node_starts_with(info->alias, info->argv[i], '='));
 	}
 
 	return (0);

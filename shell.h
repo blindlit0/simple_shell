@@ -125,11 +125,11 @@ char *find_path(info_t *, char *, char *);
 /* loophsh.c */
 int loophsh(char **);
 
-/* toem_errors.c dooooooooooooooooooooone*/
-void _print_str(char *);
-int _write_stderr(char);
-int _write_fd(char c, int fd);
-int _print_input(char *str, int fd);
+/* toem_errors.c */
+void _eputs(char *);
+int _eputchar(char);
+int _putfd(char c, int fd);
+int _putsfd(char *str, int fd);
 
 /* toem_string.c */
 int _strlen(char *);
@@ -160,49 +160,49 @@ void *_realloc(void *, unsigned int, unsigned int);
 /* toem_memory.c */
 int bfree(void **);
 
-/* toem_atoi.c  dooooooooooooooooooooooooooooooone*/
-int interact(info_t *);
-int check_char_delim(char, char *);
-int _isalphabet(int);
+/* toem_atoi.c */
+int interactive(info_t *);
+int is_delim(char, char *);
+int _isalpha(int);
 int _atoi(char *);
 
-/* toem_errors1.c dooooooooooooooooooooooone*/
+/* toem_errors1.c */
 int _erratoi(char *);
-void print_er_mes(info_t *, char *);
-int print_dec(int, int);
-char *conv_num(long int, int, int);
-void replace_comments(char *);
+void print_error(info_t *, char *);
+int print_d(int, int);
+char *convert_number(long int, int, int);
+void remove_comments(char *);
 
-/* toem_builtin.c dooooooooooooooooooooooooooooooone*/
-int _shellquit(info_t *);
-int _cddir(info_t *);
-int _cddirect(info_t *);
+/* toem_builtin.c */
+int _myexit(info_t *);
+int _mycd(info_t *);
+int _myhelp(info_t *);
 
-/* toem_builtin1.c dooooooooooooooooooooooooooooooone*/
-int _historylist(info_t *);
-int string_alias(info_t *);
+/* toem_builtin1.c */
+int _myhistory(info_t *);
+int _myalias(info_t *);
 
 /*toem_getline.c */
 ssize_t get_input(info_t *);
 int _getline(info_t *, char **, size_t *);
 void sigintHandler(int);
 
-/* toem_getinfo.c dooooooooooooooooooone*/
-void not_info(info_t *);
-void init_info(info_t *, char **);
+/* toem_getinfo.c */
+void clear_info(info_t *);
+void set_info(info_t *, char **);
 void free_info(info_t *, int);
 
-/* toem_environ.c dooooooooooooooooooooooooooooooo*/
-char *_fetchenv(info_t *, const char *);
-int _curenv(info_t *);
-int _newenv(info_t *);
-int _rmenv(info_t *);
-int pop_env_list(info_t *);
+/* toem_environ.c */
+char *_getenv(info_t *, const char *);
+int _myenv(info_t *);
+int _mysetenv(info_t *);
+int _myunsetenv(info_t *);
+int populate_env_list(info_t *);
 
-/* toem_getenv.c dooooooooooooooooooooooone*/
+/* toem_getenv.c */
 char **get_environ(info_t *);
-int _killenv(info_t *, char *);
-int _initenv(info_t *, char *, char *);
+int _unsetenv(info_t *, char *);
+int _setenv(info_t *, char *, char *);
 
 /* toem_history.c */
 char *get_history_file(info_t *info);
