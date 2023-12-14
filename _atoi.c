@@ -1,10 +1,9 @@
 #include "shell.h"
 
 /**
- * interact - should work true if the shell is interactive
+ * interact - Adds interactive mode to the shell
  * @info: address of struct
- * Return: 1 when interactive mode is a success,
- * and 0 if not
+ * Return: 1 on success, 0 otherwise
  */
 
 int interact(info_t *info)
@@ -13,11 +12,10 @@ int interact(info_t *info)
 }
 
 /**
- * check_char_delim - prototype to check if a char is a delimeter
+ * check_char_delim - prototype to check if a char is a delimiter
  * @c: this is the char to be checked
- * @delim: delimeter string
- * Return: 1 if char is a delimeter, and
- * 0 if the char is not
+ * @delim: delimiter string
+ * Return: 1 if delimiter detected, 0 otherwise
  */
 
 int check_char_delim(char c, char *delim)
@@ -29,7 +27,7 @@ int check_char_delim(char c, char *delim)
 }
 
 /**
- *_isalphabet - prototype to check if there is a character of the alphabet
+ *_isalphabet - checks for the presenc of alphabets in input char
  *@c: input char
  *Return: 1 if the input char is alphabetic and
  *0 if not
@@ -44,9 +42,9 @@ int _isalphabet(int c)
 }
 
 /**
- *_atoi - prototype to convert a string to an integer
- *@s: string to be converted to integer
- *Return: 0 of conversion failed
+ *_atoi - Converts string to an integer
+ *@s: string to be converted
+ *Return: converted string (0), 1 otherwise
  */
 
 int _atoi(char *s)
