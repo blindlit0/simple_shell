@@ -1,4 +1,4 @@
-#include "shell.h"
+#include "main.h"
 
 /**
  * sig_handler - checks if Ctrl C is pressed
