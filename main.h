@@ -14,8 +14,4 @@ char *get_location(char *command);
 
 int stat(const char *pathname, struct stat *statbuff);
 
-/* get_line.c */
-void bring_line(char **lineptr, size_t *n, char *buffer, size_t j);
-ssize_t get_line(char **lineptr, size_t *n, FILE *stream);
-
 #endif
