@@ -13,7 +13,7 @@ void sig_handler(int sig_num)
 }
 
 /**
-* _EOF - handles the End of File
+* _EOF - handles EOF
 * @len: return value of getline function
 * @buff: buffer
  */
@@ -24,7 +24,7 @@ void _EOF(int len, char *buff)
 	{
 		if (isatty(STDIN_FILENO))
 		{
-			_puts("\n");
+			_puts("\n#cisfun");
 			free(buff);
 		}
 		exit(0);
@@ -37,7 +37,7 @@ void _EOF(int len, char *buff)
 void _isatty(void)
 {
 	if (isatty(STDIN_FILENO))
-		_puts("#cisfun$ ");
+		_puts("$ ");
 }
 /**
  * main - Shell
